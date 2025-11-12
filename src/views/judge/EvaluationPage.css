@@ -1,0 +1,243 @@
+.evaluation {
+    background: #0d111b;
+    min-height: 100vh;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    overflow-y: overlay;
+}
+
+.evaluation-header {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.evaluation::-webkit-scrollbar {
+    width:6px;
+    background: transparent;
+}
+
+.evaluation::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.evaluation:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.evaluate-box {
+    background: #12192d;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.25);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.evaluate-box::-webkit-scrollbar {
+    height: 8px;
+}
+
+.evaluate-box::-webkit-scrollbar-thumb {
+    background: #2a3556;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    min-width: 900px;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    color: #e3e3e3;
+    table-layout: auto;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #27304a;
+    vertical-align: middle;
+    position: relative
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    min-width: 50px;
+    text-align: center;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    padding-left: 60px;
+    min-width: 200px;
+    text-align: left;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    min-width: 130px;
+    text-align: left;
+}
+
+th:nth-child(4),
+td:nth-child(4),
+th:nth-child(5),
+td:nth-child(5),
+th:nth-child(6),
+td:nth-child(6) {
+    min-width: 100px;
+    text-align: center;
+}
+
+th:nth-child(7),
+td:nth-child(7) {
+    min-width: 100px;
+    text-align: center;
+}
+
+.student-td {
+    text-align: left;
+    padding-left: 60px;
+}
+
+.student-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+}
+
+.student-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.student-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.submit-btn {
+    background: #2a3556;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    margin-top: 20px;
+    align-self: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #3b4a73;
+}
+
+@media (max-width: 1100px) {
+    .evaluate-box {
+        padding: 20px;
+    }
+
+    table {
+        min-width: 800px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .evaluation {
+        padding: 10px;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    .student-td {
+        padding-left: 40px;
+    }
+}
+
+select,
+input[type="number"] {
+    background: #1a2133;
+    color: #fff;
+    border: 1px solid #2a3556;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+select:focus,
+input[type="number"]:focus {
+    border-color: #3b4a73;
+    background: #202a44;
+}
+
+select:disabled,
+input[type="number"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.submit-btn {
+    background: #32427a;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 42px;
+    margin-top: 24px;
+    align-self: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    box-shadow: 0 0 8px rgba(80, 100, 190, 0.3);
+}
+
+.submit-btn:hover {
+    background: #3f54a3;
+    box-shadow: 0 0 16px rgba(110, 130, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    background: #2a3770;
+    transform: translateY(0);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.highlighted {
+    background: rgba(75, 92, 160, 0.35);
+    border-radius: 6px;
+    transition: background 0.5s ease;
+}

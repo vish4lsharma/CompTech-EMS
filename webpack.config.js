@@ -20,6 +20,7 @@ module.exports = {
 
   module: {
     rules: [
+      // ✅ Babel loader for React and JS
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -30,9 +31,25 @@ module.exports = {
           },
         },
       },
+
+      // ✅ CSS loader
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+
+      // ✅ Image loader (PNG, JPG, SVG, etc.)
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[hash].[ext]",
+              outputPath: "images",
+            },
+          },
+        ],
       },
     ],
   },

@@ -1,0 +1,42 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #0d111b;
+    overflow-x: hidden;
+}
+
+#root,
+.App {
+    background: #0d111b;
+    min-height: 100vh;
+}
+
+.highlighted {
+    background: rgba(75, 92, 160, 0.35);
+    border-radius: 6px;
+    transition: background 0.5s ease;
+}
+
+html,
+body,
+.app-container,
+.evaluation {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.app-container::-webkit-scrollbar,
+.evaluation::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    background: transparent !important;
+}
+
+html,
+body {
+    overflow-y: scroll !important;
+    background-color: #0d111b;
+}
