@@ -1,5 +1,5 @@
 import React from "react";
-import "./SidebarJudge.css";
+import "./Sidebar.css";
 import logo from "../assets/logo.png";
 import sidebarImage from "../assets/Sidebar.png";
 import { Home, Calendar, ClipboardCheck, Bell,    LogOut, Settings, HelpCircle } from "lucide-react";
