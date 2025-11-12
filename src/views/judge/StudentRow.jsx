@@ -31,23 +31,26 @@ const StudentRow = ({ student, index, stage, onAttendanceChange, onScoreChange }
 
   return (
   <>
-    <td>{index + 1}</td>
+    <td data-label="S.No.">{index + 1}</td>
     <td className="student-td">
       <div className="student-cell">
         <img src={student.avatar} className="student-avatar" alt="" />
         <span className="student-name">{student.name}</span>
       </div>
     </td>
-    <td>
-      <DarkDropdown
-        value={student.attendance || ""}
-        onChange={(val) => !submitted && onAttendanceChange(index, val)}
-        options={["Present", "Absent"]}
-        disabled={submitted}
-      />
-    </td>
+    <td data-label="Attendance" style={{ width: "100%", minWidth: "120px" }}>
+  <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+    <DarkDropdown
+      options={["Select", "Present", "Absent"]}
+      value={student.attendance || ""}
+      onChange={(val) => onAttendanceChange(index, val)}
+      disabled={submitted}
+    />
+  </div>
+</td>
+
     {[0, 1, 2].map((j) => (
-      <td key={j}>
+      <td data-label={`Score ${j + 1}`} key={j}>
         <input
           type="number"
           min="1"
@@ -59,7 +62,7 @@ const StudentRow = ({ student, index, stage, onAttendanceChange, onScoreChange }
         />
       </td>
     ))}
-    <td>{total}</td>
+    <td data-label="Total Score">{total}</td>
   </>
 );
 

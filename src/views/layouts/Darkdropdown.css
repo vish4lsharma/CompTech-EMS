@@ -1,14 +1,13 @@
 .dark-dropdown-container {
-    --dropdown-width: 90px;
     position: relative;
-    width: var(--dropdown-width);
+    /* anchors dropdown inside parent */
+    width: 100%;
     font-size: 14px;
     color: #fff;
-    margin-left: 0px;
     box-sizing: border-box;
 }
 
-
+/* --- Header --- */
 .dark-dropdown-header {
     background-color: #1a2133;
     border: 1px solid #2a3556;
@@ -17,9 +16,10 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
+    /* ✅ fixed alignment */
     transition: border 0.2s ease, background 0.2s ease;
-    width: var(--dropdown-width);
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -28,27 +28,29 @@
     background-color: #202a44;
 }
 
-.dark-dropdown-arrow {
-    font-size: 10px;
-    color: #bfc9e1;
-    margin-left: 8px;
-}
-
+/* --- Dropdown List --- */
 .dark-dropdown-list {
     position: absolute;
-    top: calc(100% + 4px);
+    /* ✅ stays below header */
+    top: 100%;
     left: 0;
-    width: var(--dropdown-width);
+    width: 100%;
     background-color: #0e1424;
     border: 1px solid #2a3556;
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    /* ✅ keeps it above cards but below modals */
     overflow: hidden;
     animation: fadeIn 0.15s ease;
-    box-sizing: border-box;
+    display: none;
 }
 
+.dark-dropdown-list.open {
+    display: block;
+}
+
+/* --- Dropdown Items --- */
 .dark-dropdown-item {
     padding: 8px 10px;
     cursor: pointer;
@@ -64,6 +66,7 @@
     background-color: #2a3556;
 }
 
+/* --- Icons --- */
 .dark-dropdown-icon {
     color: #bfc9e1;
     transition: transform 0.2s ease;
@@ -73,6 +76,21 @@
     transform: rotate(180deg);
 }
 
+/* --- Disabled --- */
+.dark-dropdown-container.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+    transition: opacity 0.3s ease;
+}
+
+.dark-dropdown-header.disabled {
+    background-color: #1a2133;
+    border-color: #2a3556;
+    color: #888;
+}
+
+/* --- Animation --- */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -85,15 +103,20 @@
     }
 }
 
-.dark-dropdown-container.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: not-allowed;
-    transition: opacity 0.3s ease;
-}
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .dark-dropdown-container {
+        width: 100%;
+    }
 
-.dark-dropdown-header.disabled {
-    background-color: #1a2133;
-    border-color: #2a3556;
-    color: #888;
+    .dark-dropdown-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dark-dropdown-list {
+        width: 100%;
+        left: 0;
+    }
 }

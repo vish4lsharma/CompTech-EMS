@@ -1,9 +1,10 @@
 import React from "react";
-import { useSearch } from "./SearchContext"; 
+import { useSearch } from "./SearchContext";
 import "./Header.css";
+import { Menu } from "lucide-react";   // ✅ new icon
 import avatar1 from "../assets/avatar2.png";
 
-const Header = ({ sidebarWidth, user }) => {
+const Header = ({ sidebarWidth, user, setSidebarOpen }) => {
   const { handleGlobalSearch } = useSearch();
 
   return (
@@ -15,6 +16,15 @@ const Header = ({ sidebarWidth, user }) => {
       }}
     >
       <div className="header-container">
+
+        {/* --- Mobile Menu Button --- */}
+        <button
+          className="menu-toggle"
+          onClick={() => setSidebarOpen((prev) => !prev)}
+        >
+          <Menu size={22} />
+        </button>
+
         <input
           type="text"
           className="search-bar"

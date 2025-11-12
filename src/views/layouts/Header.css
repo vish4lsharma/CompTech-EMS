@@ -82,3 +82,30 @@
 .dropdown-item:hover {
     background: #28324d;
 }
+
+/* --- Mobile menu toggle --- */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle:hover {
+    color: #a5b4fc;
+}
+
+/* show only on smaller screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
